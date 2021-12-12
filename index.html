@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <button id="startbutton">Start/Stop</button>
+    <button id="mouseoverbutton">toggle Mouseover</button>
+    <button id="trailbutton">toggle Trail</button>
+    <input type="number" id="trailfactorfield" name="trail Factor" min="1" max="200" oninput="updateTrailFactor(this.value)">
+    <br><br>
+    <button id="cleartreblebutton">clear Treble Notes</button>
+    <button id="clearbassbutton">clear Bass Notes</button>
+    <button id="clearsamplesbutton">clear Sample Notes</button>
+    <br><br>
+    BPM
+    <br>
+    <input type="range" min="60" max="200" oninput="updateBPM(this.value)" onchange="updateBPM(this.value)">
+    <br><br><br>
+    <table style="width:700px">
+      <tr>
+        <th style="text-align:center">Sound</th>
+        <th style="text-align:center"><img id="b1" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b2" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b3" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b4" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b5" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b6" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b7" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b8" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b9" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b10" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b11" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b12" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b13" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b14" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b15" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+        <th style="text-align:center"><img id="b16" src="images/whitedot.jpg" alt="Empty Beat" width="20" height="20" onclick="toggleEnableInst(this.id)"></th>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble D5</td>
+        <td style="text-align:center"><img id="sine_d5_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d5_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble C#5</td>
+        <td style="text-align:center"><img id="sine_cs5_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_cs5_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble C5</td>
+        <td style="text-align:center"><img id="sine_c5_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_c5_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble B4</td>
+        <td style="text-align:center"><img id="sine_b4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_b4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble A#4</td>
+        <td style="text-align:center"><img id="sine_as4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_as4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble A4</td>
+        <td style="text-align:center"><img id="sine_a4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_a4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble G#4</td>
+        <td style="text-align:center"><img id="sine_gs4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_gs4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble G4</td>
+        <td style="text-align:center"><img id="sine_g4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_g4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble F#4</td>
+        <td style="text-align:center"><img id="sine_fs4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_fs4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble F4</td>
+        <td style="text-align:center"><img id="sine_f4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_f4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble E4</td>
+        <td style="text-align:center"><img id="sine_e4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_e4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble D#4</td>
+        <td style="text-align:center"><img id="sine_ds4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_ds4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble D4</td>
+        <td style="text-align:center"><img id="sine_d4_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="sine_d4_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass D3</td>
+        <td style="text-align:center"><img id="saw_d3_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d3_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass C#3</td>
+        <td style="text-align:center"><img id="saw_cs3_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_cs3_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass C3</td>
+        <td style="text-align:center"><img id="saw_c3_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_c3_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass B2</td>
+        <td style="text-align:center"><img id="saw_b2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_b2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass A#2</td>
+        <td style="text-align:center"><img id="saw_as2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_as2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass A2</td>
+        <td style="text-align:center"><img id="saw_a2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_a2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass G#2</td>
+        <td style="text-align:center"><img id="saw_gs2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_gs2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass G2</td>
+        <td style="text-align:center"><img id="saw_g2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_g2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass F#2</td>
+        <td style="text-align:center"><img id="saw_fs2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_fs2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass F2</td>
+        <td style="text-align:center"><img id="saw_f2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_f2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass E2</td>
+        <td style="text-align:center"><img id="saw_e2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_e2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass D#2</td>
+        <td style="text-align:center"><img id="saw_ds2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_ds2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass D2</td>
+        <td style="text-align:center"><img id="saw_d2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="saw_d2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="ride" src="samples/ride.wav"></audio>
+        <td style="text-align:center">ride</td>
+        <td style="text-align:center"><img id="ride_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="ride_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="crash" src="samples/crash.wav"></audio>
+        <td style="text-align:center">crash</td>
+        <td style="text-align:center"><img id="crash_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="crash_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="hat2" src="samples/hat2.wav"></audio>
+        <td style="text-align:center">hat2</td>
+        <td style="text-align:center"><img id="hat2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="hat1" src="samples/hat1.wav"></audio>
+        <td style="text-align:center">hat1</td>
+        <td style="text-align:center"><img id="hat1_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="hat1_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="shaker" src="samples/shaker.wav"></audio>
+        <td style="text-align:center">shaker</td>
+        <td style="text-align:center"><img id="shaker_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="shaker_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="clap" src="samples/clap.wav"></audio>
+        <td style="text-align:center">clap</td>
+        <td style="text-align:center"><img id="clap_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="clap_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="rim2" src="samples/rim2.wav"></audio>
+        <td style="text-align:center">rim2</td>
+        <td style="text-align:center"><img id="rim2_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim2_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="rim1" src="samples/rim1.wav"></audio>
+        <td style="text-align:center">rim1</td>
+        <td style="text-align:center"><img id="rim1_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="rim1_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="snare" src="samples/snare.wav"></audio>
+        <td style="text-align:center">snare</td>
+        <td style="text-align:center"><img id="snare_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="snare_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="tom" crossOrigin="anonymous" src="samples/tom.wav"></audio>
+        <td style="text-align:center">tom</td>
+        <td style="text-align:center"><img id="tom_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="tom_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+      <tr>
+        <audio id="kick" crossOrigin="anonymous" src="samples/kick.wav"></audio>
+        <td style="text-align:center">kick</td>
+        <td style="text-align:center"><img id="kick_b1" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b2" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b3" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b4" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b5" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b6" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b7" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b8" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b9" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b10" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b11" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b12" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b13" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b14" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b15" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+        <td style="text-align:center"><img id="kick_b16" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onmouseover="mouseoverEnable(this.id)" onclick="toggleEnableInst(this.id)"></td>
+      </tr>
+    </table>
+    <br><br><br><br>
+
+    <table style="width:700px">
+      <tr>
+        <th style="text-align:center">Option</th>
+        <th style="text-align:center"></th>
+        <th style="text-align:center"></th>
+        <th style="text-align:center"></th>
+        <th style="text-align:center"></th>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble AM</td>
+        <td style="text-align:center"><img id="trebleAmToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleTrebleAM(this.id)"></td>
+        <td style="text-align:center">frequency <br> <input type="range" min="1" max="1000" oninput="updateTrebleAMFreq(this.value)" onchange="updateTrebleAMFreq(this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass AM</td>
+        <td style="text-align:center"><img id="bassAmToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleBassAM(this.id)"></td>
+        <td style="text-align:center">frequency <br> <input type="range" min="1" max="1000" oninput="updateBassAMFreq(this.value)" onchange="updateBassAMFreq(this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">treble Vibrato</td>
+        <td style="text-align:center"><img id="trebleVibToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggelTrebleVib(this.id)"></td>
+        <td style="text-align:center">Frequency <br> <input type="range" min="1" max="20" oninput="updateTVibFreq(this.value)" onchange="updateTVibFreq(this.value)"></td>
+        <td style="text-align:center">depth <br> <input type="range" min="0" max="100" oninput="updateTVibDepth(this.value)" onchange="updateTVibDepth(this.value)"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <!-- <tr>
+        <td style="text-align:center">treble Delay</td>
+        <td style="text-align:center"><img id="trebleDelayToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleTrebleDelay(this.id)"></td>
+        <td style="text-align:center">delay time <br> <input type="range" min="0" max="2" step="0.00001" oninput="updateTDelayTime(this.value)" onchange="updateTDelayTime(this.value)"></td>
+        <td style="text-align:center">delay feedback <br> <input type="range" min="0.0001" max="0.9" step="0.00001" oninput="updateTDelayFeedback(this.value)" onchange="updateTDelayFeedback(this.value)"></td>
+        <td style="text-align:center"></td>
+      </tr> -->
+      <tr>
+        <td style="text-align:center">treble LPF</td>
+        <td style="text-align:center"><img id="trebleLPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleTrebleLPF(this.id)"></td>
+        <td style="text-align:center">frequency <br> <input type="range" min="1" max="20000" oninput="updateTrebleLPFFreq(this.value)" onchange="updateTrebleLPFFreq(this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">bass LPF</td>
+        <td style="text-align:center"><img id="bassLPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleBassLPF(this.id)"></td>
+        <td style="text-align:center">frequency <br> <input type="range" min="1" max="20000" oninput="updateBassLPFFreq(this.value)" onchange="updateBassLPFFreq(this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">ride LPF</td>
+        <td style="text-align:center"><img id="ride_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="ride_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">crash LPF</td>
+        <td style="text-align:center"><img id="crash_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="crash_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">hat2 LPF</td>
+        <td style="text-align:center"><img id="hat2_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="hat2_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">hat1 LPF</td>
+        <td style="text-align:center"><img id="hat1_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="hat1_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">shaker LPF</td>
+        <td style="text-align:center"><img id="shaker_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="shaker_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">clap LPF</td>
+        <td style="text-align:center"><img id="clap_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="clap_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">rim2 LPF</td>
+        <td style="text-align:center"><img id="rim2_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="rim2_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">rim1 LPF</td>
+        <td style="text-align:center"><img id="rim1_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="rim1_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">snare LPF</td>
+        <td style="text-align:center"><img id="snare_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="snare_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">tom LPF</td>
+        <td style="text-align:center"><img id="tom_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="tom_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">kick LPF</td>
+        <td style="text-align:center"><img id="kick_LPFToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleSampleLPF(this.id)"></td>
+        <td style="text-align:center">frequency<br>
+              <input id="kick_LPFUpdate" type="range" min="1" max="20000" oninput="updateSampleLPFFreq(this.id, this.value)" onchange="updateSampleLPFFreq(this.id, this.value)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">convolve "Alternative Facts"</td>
+        <td style="text-align:center"><img id="alternative_convToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleAltConv(this.id)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">convolve "Mr. Vice Presiden't I'm Speaking"</td>
+        <td style="text-align:center"><img id="vice_convToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleViceConv(this.id)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+      <tr>
+        <td style="text-align:center">convolve "Radical Left Supporters"</td>
+        <td style="text-align:center"><img id="trump_convToggle" src="images/greydot.png" alt="Empty Beat" width="20" height="20" onclick="toggleTrumpConv(this.id)"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+      </tr>
+    </table>
+
+    <audio id="alternative" crossOrigin="anonymous" src="samples/alternative.mp3"></audio>
+
+    <br><br><br>
+    <h1>
+      Hello!
+    </h1>
+    <p>
+      Thank you for checking out my final project for COMS3430! This is a step sequencer <br>
+      featuring a sine synthesizer in the treble range, a saw synthesizer in the bass range, <br>
+      several percussion samples, and optional effects. I have some tips below for fun things <br>
+      you can do on this page, but I think the best way to approach it is to just start <br>
+      clicking around and see what the page can do for you. Enjoy! <br>
+    </p>
+
+    <h2>
+      Motivation
+    </h2>
+    <p>
+      In general, I am most interested in using technology to give musicians platforms for <br>
+      expressing and expanding their own creativity. This is essentially like inventing new musical <br>
+      instruments, but digitally. Every musician has preferences and opinions on what sounds "good" <br>
+      that are shaped by their own influences and experiences. I think of this as something of a <br>
+      "musical personality," and I think it is important to give musicians as many options and platforms <br>
+      as possible for expressing their "musical personality." My aim for this step sequencer was to create <br>
+      a platform that has enough features to let musicians' "personalities" comes through, while <br>
+      maintaining a somewhat controlled environment so that it would be difficult to create something <br>
+      altogether horrendous. <br>
+    </p>
+    <h2>
+      Features
+    </h2>
+    <p>
+      Here are the features included in this step sequencer. <br><br>
+
+      Instruments:
+
+      <p style="margin-left: 20px">
+        -Treble Synth:
+          <p style="margin-left: 40px">
+          A polyphonic sinewave synth with a range from D4 to D5. <br>
+          </p>
+      </p>
+      <p style="margin-left: 20px">
+        -Bass Synth:
+          <p style="margin-left: 40px">
+          A polyphonic sawtooth synth with a range from D2 to D3. <br>
+          </p>
+      </p>
+      <p style="margin-left: 20px">
+        -Percussion Samples:
+          <p style="margin-left: 40px">
+          Sampled percussion hits, including ride, crash, two hats, shaker, <br>
+          clap, two rims, snare, tom, and kick. <br>
+          </p>
+      </p>
+      Options:
+      <p style="margin-left: 20px">
+        -AM Synthesis:
+          <p style="margin-left: 40px">
+          Options to toggle AM synthesis for both the treble synth and the <br>
+          the bass synth. Slider to adjust the AM frequency.
+          </p>
+      </p>
+      <p style="margin-left: 20px">
+        -Low-pass Filter:
+          <p style="margin-left: 40px">
+          Options to add a low-pass filter on both synths and each sample sound. <br>
+          Sliders to adjust the cutoff frequency for each filter. <br>
+          </p>
+      </p>
+      <p style="margin-left: 20px">
+        -Vibrato:
+          <p style="margin-left: 40px">
+          Option to add vibrato to the treble synth. Sliders to adjust the frequency <br>
+          and depth of the vibrato. <br>
+          </p>
+      </p>
+      <p style="margin-left: 20px">
+        -Convolution:
+          <p style="margin-left: 40px">
+          Options to convolve the percussion samples with external sound clips. Options <br>
+          for convolution are: <br>
+          -Kellyanne Conway saying "Alternative Facts" <br>
+          -Kamala Harris saying "Mr. Vice President, I'm speaking" <br>
+          -Donald Trump saying "Radical Left Supporters" <br>
+          </p>
+      </p>
+      Global-Usage:
+      <p style="margin-left: 20px">
+        -BPM:
+          <p style="margin-left: 40px">
+          Slider to adjust the BPM of the sequencer. New BPM only takes effect after stopping <br>
+          and restarting the sequencer. <br>
+          </p>
+      </p>
+      <p style="margin-left: 20px">
+        -Mouseover:
+          <p style="margin-left: 40px">
+          When not enabled, notes can be triggered by clicking the grey dots. When a grey dot <br>
+          turns green, the note is enabled. Mouseover allows the user to toggle notes by hovering <br>
+          their mouse over the grey dot, making for faster triggering. <br>
+          </p>
+      </p>
+      <p style="margin-left: 20px">
+        -Trail:
+          <p style="margin-left: 40px">
+          Trailing is dependent on a number, the trailFactor, which is initially set to 5 and can <br>
+          be adjusted in the field next to the "toggle Trail" button. When trail is enabled, if the <br>
+          number of triggered notes exceeds trailFactor, triggering a new note will simultaneously <br>
+          disable the note triggered trailFactor notes ago. To see this effect clearly, turn on both <br>
+          mouseover and trail and run your mouse over the buttons. <br>
+          </p>
+      </p>
+    </p>
+    <h2>
+      Ideas for getting started
+      <h3>
+        Techno
+      </h3>
+      <p>
+        The design of this sequencer is well suited for quickly making a techno-style loop. There <br>
+        are 16 beats where users can trigger notes. Consider these as 4 principle beats with 16th notes <br>
+        in between. The default BPM is set to 120 (in terms of the principle beats). <br><br>
+
+        Trigger kick drums on beats 1, 5, 9, and 13. Now trigger a hat on beats 3, 7, 11, and 15. <br>
+        Instantly, you have a basic techno rhythm to work off of. From here, have fun clicking around <br>
+        in the synths to create a bass riff and a melody, and mess around with the options to shape the <br>
+        sound how you like it.
+      </p>
+      <h3>
+        Evolving Rhythms
+      </h3>
+      <p>
+        Enable trail mode and set the trailFactor to 30, and enable one of the convolutions. Start the <br>
+        sequencer, and start clicking randomly in the percussion sounds. At first it won't sound like much, <br>
+        but eventually a rhythm will start to form. Once you have enough notes triggered and you start to <br>
+        see them trailing off as well, slow down and only trigger notes every second or so. What you'll have <br>
+        is a continually evolving rhythm, where new elements are added and old ones are removed with each <br>
+        new click.
+      </p>
+    </h2>
+    <br><br><br><br>Michel Vazirani
+  </body>
+  <script src="main.js"></script>
+</html>
+
+
+
+<!-- comment -->
