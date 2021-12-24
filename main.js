@@ -650,9 +650,6 @@ function playFromId(id){
 
 
 function playSine(note, beat){
-  console.log("hello")
-  console.log(trebleVibFreq)
-  console.log(trebleVibDepth)
   trebleOscs[note]["gain"].gain.setTargetAtTime(0.9, audioCtx.currentTime+0.001, 0.005)
   trebleOscs[note]["gain"].gain.setTargetAtTime(0.00001, audioCtx.currentTime+0.05, 0.005)
 }
